@@ -16,7 +16,7 @@ public class Hello_World {
 		long rectangleArea2 = CalculateRectangleArea(MyRectangle2);
 		long rectanglePerimeter2 = CalculateRectanglePerimeter(MyRectangle2);
 		Print(MyRectangle2, rectangleArea2, rectanglePerimeter2);
-		
+		System.out.println("");
 	}
 	
 	public static long CalculateRectangleArea(Rectangle r){
