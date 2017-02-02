@@ -1,6 +1,10 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
 
 import javax.swing.JComponent;
 
@@ -9,12 +13,10 @@ public class MyComponent extends JComponent {
 	static int counter = 0;
 	
 	public void paintComponent(Graphics g){
-		Rectangle r = new Rectangle(0,0,50,50);
-		Rectangle r2 = new Rectangle(this.getWidth()-50, this.getHeight()-50, 50, 50);
-		//Rectangle r2 = new Rectangle(350, 250, 50, 50);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.draw(r);
-		g2.draw(r2);
+		Car car1 = new Car(0,0, Color.RED);
+		Car car2 = new Car(0,40, Color.BLUE);
+		car1.draw(g);
+		car2.draw(g);
 		System.out.println("Painted " + counter++ + " times");
 	}
 
