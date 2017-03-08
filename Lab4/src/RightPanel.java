@@ -136,10 +136,12 @@ public class RightPanel extends JPanel {
 		int width = leftImage.getWidth();
 		int height = leftImage.getHeight();
 		Random rnd = new Random();
-		for (int j=0; j < height; j++){
-			for (int i=0; i < width; i++){
-				int pixelColor= leftImage.getRGB(i, j);
-				img.setRGB(rnd.nextInt(width),rnd.nextInt(height), pixelColor);
+		for (int j=0; j < height;j++){
+			for (int i=0; i < width;i++){
+				int randomX = rnd.nextInt(width);
+				int randomY = rnd.nextInt(height);
+				int pixelColor= leftImage.getRGB(randomX,randomY);
+				img.setRGB(randomX,randomY, pixelColor);
 			}
 			repaint();
 			try { Thread.sleep(10); } catch (InterruptedException e) { };
