@@ -2,7 +2,6 @@
 public class IntegerSet {
 	
 	public int[] elements;
-	
 	public int numElements;
 	
 	public IntegerSet(int maxNumElements){
@@ -73,6 +72,17 @@ public class IntegerSet {
 			if(b.isMember(this.elements[i])){
 				c.add(this.elements[i]);
 			}
+		}
+		return c;
+	}
+	
+	public IntegerSet union(IntegerSet b){
+		IntegerSet c = new IntegerSet(this.cardinality() + b.cardinality());
+		for(int i = 0; i < this.cardinality(); i++){
+			c.add(this.elements[i]);
+		}
+		for(int i = 0; i < b.cardinality(); i++){
+			c.add(this.elements[i]);
 		}
 		return c;
 	}
